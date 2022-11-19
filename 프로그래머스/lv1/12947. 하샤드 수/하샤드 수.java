@@ -11,10 +11,6 @@ class Solution {
             n = quo;
         }
         
-        if (x % sum == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return (x % sum == 0) ? true : false;
     }
 }
