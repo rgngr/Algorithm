@@ -9,8 +9,8 @@ class Solution {
             for (int j=0; j<n; j++) {
                 temp1[i][n-1-j] = arr1[i] % 2;
                 temp2[i][n-1-j] = arr2[i] % 2;
-                arr1[i] = arr1[i] / 2;
-                arr2[i] = arr2[i] / 2;
+                arr1[i] /= 2;
+                arr2[i] /= 2;
             }
         }
         
