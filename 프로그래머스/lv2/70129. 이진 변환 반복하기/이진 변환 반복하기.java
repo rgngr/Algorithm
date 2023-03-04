@@ -5,6 +5,7 @@ class Solution {
         int num1 = 0;
         int count = 0;
         
+        // s = s.replaceAll("0","");
         while(true) {
             
             for (int i=0; i<s.length(); i++) {
