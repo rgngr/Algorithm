@@ -1,21 +1,20 @@
-import java.util.*;
+import java.util.Stack;
 
 class Solution
 {
     public int solution(String s)
     {
         int answer = 0;
-        Stack st = new Stack();
-        st.add(s.charAt(0));
+        Stack<Character> st = new Stack<>();
 
-        for (int i=1; i<s.length(); i++) {
+        for (int i=0; i<s.length(); i++) {
             if (st.empty()) {
-                st.add(s.charAt(i));
+                st.push(s.charAt(i));
             } else {
-                if (Objects.equals(s.charAt(i), st.peek())) {
+                if (s.charAt(i)==st.peek()) {
                     st.pop();
                 } else {
-                    st.add(s.charAt(i));
+                    st.push(s.charAt(i));
                 }
             }
         }
