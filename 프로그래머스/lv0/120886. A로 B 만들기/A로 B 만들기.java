@@ -20,5 +20,13 @@ class Solution {
         if (count == tempA.length) answer = 1;
         
         return answer;
+        
+        // 다른 사람 풀이
+//         char[] a = before.toCharArray();
+//         char[] b = after.toCharArray();
+//         Arrays.sort(a);
+//         Arrays.sort(b);
+
+//         return new String(a).equals(new String(b)) ? 1 :0;
     }
 }
