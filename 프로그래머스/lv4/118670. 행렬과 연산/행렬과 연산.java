@@ -6,17 +6,13 @@ class Solution {
         int length2 = rc[0].length;
         
         Deque<Integer> left = new ArrayDeque<>();
+        Deque<Integer> right = new ArrayDeque<>();
+        Deque<Deque<Integer>> center = new ArrayDeque<>();
+        
         for (int i=0; i<length1; i++) {
             left.offer(rc[i][0]);
-        }
-        
-        Deque<Integer> right = new ArrayDeque<>();
-        for (int i=0; i<length1; i++) {
             right.offer(rc[i][length2-1]);
-        }
-        
-        Deque<Deque<Integer>> center = new ArrayDeque<>();
-        for (int i=0; i<length1; i++) {
+            
             center.offer(new LinkedList<Integer>());
             for (int j=1; j<length2-1; j++) {
                 center.peekLast().offer(rc[i][j]);
@@ -38,13 +34,8 @@ class Solution {
         
         for (int i=0; i<length1; i++) {
             rc[i][0] = left.pollFirst();
-        }
-        
-        for (int i=0; i<length1; i++) {
             rc[i][length2-1] = right.pollFirst();
-        }
-        
-        for (int i=0; i<length1; i++) {
+            
             int j = 1;
             for (int k : center.pollFirst()) {
                 rc[i][j++] = k;
