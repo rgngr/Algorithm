@@ -13,7 +13,7 @@ class Solution {
             left.offer(rc[i][0]);
             right.offer(rc[i][length2-1]);
             
-            center.offer(new LinkedList<Integer>());
+            center.offer(new ArrayDeque<>());
             for (int j=1; j<length2-1; j++) {
                 center.peekLast().offer(rc[i][j]);
             }
