@@ -3,19 +3,19 @@ import java.util.Arrays;
 class Solution {
     public int[] solution(int[][] score) {
         
-        double[] avg = new double[score.length];
+        int[] sum = new int[score.length];
         for (int i=0; i<score.length; i++) {
-            avg[i] = (score[i][0] + score[i][1]) / (double)2;
+            sum[i] = score[i][0] + score[i][1];
         }
         
-        double[] temp = avg.clone();
-        Arrays.sort(avg);
+        int[] temp = sum.clone();
+        Arrays.sort(sum);
         int[] answer = new int[score.length];
         
-        for (int i=0; i<avg.length; i++) {
+        for (int i=0; i<sum.length; i++) {
             for (int j=0; j<temp.length; j++) {
-                if (avg[i]==temp[j]) {
-                    answer[j] = avg.length-i;
+                if (sum[i]==temp[j]) {
+                    answer[j] = sum.length-i;
                 }
             }
         }
